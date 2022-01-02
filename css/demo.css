@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 16;
+}
+
+body {
+  background-image: url("../asset/images/page_background.jpeg");
+  /* background-repeat: no-repeat, repeat; */
+}
+
+div.container {
+  height: 100vh;
+  margin: auto;
+  width: 64%;
+  background-color: white;
+  padding: 0 5px;
+  border: 1px solid #ccc;
+}
+
+.header {
+  background-color: #f2ffe9;
+}
+
+.header > p {
+  width: 60%;
+  padding: 40px 0 40px 0;
+  margin: auto;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.4em;
+}
+
+div.head {
+  margin: 15px 20px 0px 20px;
+}
+
+div.head input {
+  width: 650px;
+  outline: none;
+  font-size: 16px;
+}
+
+input#title {
+  padding: 10px;
+}
+
+select#algorithm {
+  margin: 0 0 0 30px;
+  font-size: 16px;
+  padding: 10px;
+  outline: none;
+}
+
+div.description > textarea {
+  outline: none;
+  margin: 0 0 0 20px;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 20px;
+  width: 850px;
+  max-width: 100%;
+  resize: none;
+}
+
+div.footer {
+  margin: 0 0 0 20px;
+}
+
+div.footer > input {
+  width: 40px;
+  height: 40px;
+  margin: 15px;
+  text-align: center;
+  font-size: 16px;
+}
+
+div.footer > button {
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 255, 0.9);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 15px;
+}
+
+div.footer > button:hover {
+  background-color: #548cff;
+}
