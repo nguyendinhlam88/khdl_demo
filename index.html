@@ -4,52 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Demo KHDL</title>
+    <title>DEMO KHDL</title>
     <link rel="stylesheet" href="css/demo.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="header">
-        <p>GỢI Ý NHÃN CHO CÁC MÔ TẢ SẢN PHẨM</p>
+    <div class="wrapper">
+      <div class="title">
+        <h2>PHÂN LOẠI ĐA NHÃN</h2>
       </div>
-      <hr />
       <div class="content">
-        <div class="head">
-          <input
-            type="text"
-            id="title"
-            name="title"
-            placeholder="Nhập tiêu đề sản phầm"
-          />
-          <select name="algorithm" id="algorithm">
-            <option value="machine_learning">Machine learning</option>
-            <option value="deep_learning">Deep learning</option>
-          </select>
-        </div>
-        <br />
-        <div class="description">
+        <div class="main">
+          <div class="product-title">
+            <label for="product_title">Tiêu đề sản phẩm:</label>
+            <input
+              type="text"
+              id="product_title"
+              name="product_title"
+              placeholder="Nhập"
+            />
+          </div>
           <textarea
-            rows="25"
             name="description"
+            id="description"
             placeholder="Nhập mô tả sản phẩm"
           ></textarea>
         </div>
-        <div class="footer">
-          Sắc đẹp:
-          <input type="text" id="sac_dep" name="sac_dep" value="0" /> Trang
-          điểm:
-          <input type="text" id="trang_diem" name="trang_diem" value="0" /> Chăm
-          sóc: <input type="text" id="cham_soc" name="cham_soc" value="0" /> Phụ
-          kiện:
-          <input type="text" id="su_kien" name="su_kien" value="0" />
-          <button type="button" name="prediction" id="prediction">
-            Dự đoán
-          </button>
-          <button type="button" name="demo_page" id="demo_page">
-            trang demo
-          </button>
+        <div class="category">
+          <div class="category-box">
+            <h5>Thêm nhãn (Enter)</h5>
+            <ul class="category-list">
+              <input type="text" id="category-input" placeholder="thêm nhãn" />
+            </ul>
+          </div>
+          <button class="predict-btn">Phân loại</button>
         </div>
       </div>
     </div>
   </body>
+  <script src="app.js"></script>
 </html>
