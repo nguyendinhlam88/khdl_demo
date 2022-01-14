@@ -37,5 +37,51 @@ text_area.addEventListener("keyup", e => {
 
 class_btn.addEventListener('click', e => {
     let pred_content = description.value.replace("/(\r\n|\n|\r)/gm", " ").trim();
+    predict(pred_content);
     console.log(pred_content);
 });
+
+// #################### Xử lý API ####################
+const pred_Url = "http://localhost:8000/predict";
+
+let result = [];
+
+async function predict(product_description) {
+    var res = await fetch(pred_Url, {
+        method: "POST",
+        body: JSON.stringify(product_description),
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    var pred = await res.json();
+
+    tags = [];
+    tag_container.innerHTML = '<input type="text" id="category-input" placeholder="thêm nhãn" />';
+
+    if(pred["sac_dep"] == 1) {
+        let tag = `<li><span>sắc đẹp</span><span onclick="removeTag(this, 'sắc đẹp')">&#x2715;</span></li>`;
+        tag_container.insertAdjacentHTML("afterbegin", tag);
+        tags.push('sắc đẹp')
+    }
+
+    if(pred["trang_diem"] == 1) {
+        let tag = `<li><span>trang điểm</span><span onclick="removeTag(this, 'trang điểm')">&#x2715;</span></li>`;
+        tag_container.insertAdjacentHTML("afterbegin", tag);
+        tags.push('trang điểm')
+    }
+
+    if(pred["cham_soc"] == 1) {
+        let tag = `<li><span>chăm sóc</span><span onclick="removeTag(this, 'chăm sóc')">&#x2715;</span></li>`;
+        tag_container.insertAdjacentHTML("afterbegin", tag);
+        tags.push('chăm sóc')
+    }
+
+    if(pred["phu_kien"] == 1) {
+        let tag = `<li><span>phụ kiện</span><span onclick="removeTag(this, 'phụ kiện')">&#x2715;</span></li>`;
+        tag_container.insertAdjacentHTML("afterbegin", tag);
+        tags.push('phụ kiện')
+    }
+}
+
